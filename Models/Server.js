@@ -1,5 +1,4 @@
 const express = require('express');
-const errorController = require('../Controllers/Errores');
 class Server{
     constructor(){
         this.port = process.env.PORT || 3000;
@@ -13,8 +12,13 @@ class Server{
     }
     routers(){
         this.app.use('/api/MuseoRijks/',require('../Routes/Artista'));
-        this.app.use('/api/MuseoRijks/',require('../Routes/Obras'))
-        this.app.use(errorController.rutaNoDefinida);
+        this.app.use('/api/MuseoRijks/',require('../Routes/Obras'));
+        this.app.all('*', (req,res)=>{
+            res.status(404).json({
+                statusCode: 404,
+                message: "Ruta No Encontrada"
+            });
+        });
     }
     listen() {
         this.app.listen(this.port, () =>{

@@ -3,10 +3,10 @@ const apiKey = process.env.API_KEY;
 
 const getObras = (req, res) => {
     const {nombreArtista} = req.query;
-    axios.get(`https://www.rijksmuseum.nl/api/nl/collection?key=${apiKey}&involvedMaker=${nombreArtista}`)
+    axios.get(`https://www.rijksmuseum.nl/api/en/collection?key=${apiKey}&involvedMaker=${nombreArtista}`)
         .then(({ data }) => {
-            const obrasArtista = data.artObjects;
-            res.status(200).json(obrasArtista);
+            const { artObjects } = data;
+            res.status(200).json(artObjects);
         })
         .catch((error)=>{
             //si sucede una respuesta de error de axiso, es decir de la api
@@ -27,30 +27,20 @@ const getObras = (req, res) => {
 }
 const getObraPorId = (req, res) => {
     const { id } =req.params;
-    axios.get(`https://www.rijksmuseum.nl/api/nl/collection/${id}?key=${apiKey}`)
+    axios.get(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=${apiKey}`)
         .then(({ data }) => {
-            const obraArtista = data.artObject;
-            const obraDetalles = {
-                id: obraArtista.id,
-                objectNumber: obraArtista.objectNumber,
-                title: obraArtista.title,
-                longTitle: obraArtista.longTitle,
-                copyrightHolder: obraArtista.copyrightHolder,
-                webImage: obraArtista.webImage.url,
-                titles: obraArtista.titles,
-                description: obraArtista.description,
-                objectTypes: obraArtista.objectTypes,
-                objectCollection: obraArtista.objectCollection,
-                principalMaker: obraArtista.principalMaker,
-                materials: obraArtista.materials,
-                techniques: obraArtista.techniques,
-                productionPlaces: obraArtista.productionPlaces,
-                dating: obraArtista.dating,
-                periods: obraArtista.periods,
-                places: obraArtista.places,
-                Dimensions: obraArtista.dimensions,
-                physicalMedium: obraArtista.physicalMedium
-            };
+            const { artObject } = data;
+            const {id,objectNumber,title,longTitle,copyrightHolder,
+                webImage: { url },titles,description, objectTypes,
+                objectCollection,principalMaker,materials,
+                techniques,productionPlaces,dating,periods,
+                places,dimensions,physicalMedium} = artObject;
+
+            const obraDetalles = {id, objectNumber,title,longTitle,copyrightHolder,
+                url,titles,description, objectTypes,
+                objectCollection,principalMaker,materials,
+                techniques,productionPlaces,dating,periods,
+                places,dimensions,physicalMedium};
 
             res.status(200).json(obraDetalles);
         })

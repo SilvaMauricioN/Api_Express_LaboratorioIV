@@ -1,11 +1,11 @@
 ##Documentación API
 Bienvenido a la Api. Aquí encontraras como usar los endpoints. Api de consulta RIJKS DATA
-Todas las consultas comienzan con /api/MuseoRijks
+Todas las consultas comienzan con museorijks.onrender.com/api/MuseoRijks
 
-##GET /api/MuseoRijks/Artistas
+##GET museorijks.onrender.com/api/MuseoRijks/Artistas
 
 Recupera una lista de los Artistas, de los que se tienen obras en exposicion.
-Ejemplo:  GET /api/MuseoRijks/Artistas
+Ejemplo:  GET museorijks.onrender.com/api/MuseoRijks/Artistas
 Respuesta:
 ```json
 [
@@ -31,10 +31,10 @@ Respuesta:
     }    
 ]       
 ```
-##GET /api/MuseoRijks/Obras/Artista
+##GET museorijks.onrender.com/api/MuseoRijks/Obras/Artista
 
 Recupera Todas las obras de un Artista en particular. Utilizando el parametro de consulta nombreArtista.
-Ejemplo: GET /api/MuseoRijks/Obras/Artista?nombreArtista=Rembrandt+van+Rijn
+Ejemplo: GET museorijks.onrender.com/api/MuseoRijks/Obras/Artista?nombreArtista=Rembrandt+van+Rijn
 Respuesta:
 ```json		
 [
@@ -63,10 +63,10 @@ Respuesta:
 ]
 ```
 
-##GET /api/MuseoRijks/Obra/:id
+##GET museorijks.onrender.com/api/MuseoRijks/Obra/:id
 
 Recupera una obra en particular a partir de su id. Utilizando un parametro de ruta para la consulta.
-Ejemplo: GET /api/MuseoRijks/Obra/SK-C-5
+Ejemplo: GET museorijks.onrender.com/api/MuseoRijks/Obra/SK-C-5
 Respuesta:
 ```json
 {

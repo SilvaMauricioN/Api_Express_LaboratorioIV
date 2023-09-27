@@ -51,12 +51,12 @@
 	<!-- Endpoint 2 -->
 	<div class="endpoint">
 		<h2><span class="method">GET</span> /api/MuseoRijks/Obras/Artista</h2>
-		<p>Recupera Todas las obras de un Artista en particular.</p>
+		<p>Recupera Todas las obras de un Artista en particular. Utilizando el parametro de consulta nombreArtista</p>
 		<h3>Ejemplo:</h3>
 		<pre>
 			GET /api/MuseoRijks/Obras/Artista?nombreArtista=Rembrandt+van+Rijn
 		</pre>
-		<h3>Response:</h3>
+		<h3>Respuesta:</h3>
 		<pre>
 			[
 				{
@@ -89,7 +89,7 @@
 	<!-- Endpoint 3 -->
 	<div class="endpoint">
 		<h2><span class="method">GET</span> /api/MuseoRijks/Obra/:id</h2>
-		<p>Recupera una obra en particular a partir de su id</p>
+		<p>Recupera una obra en particular a partir de su id.Utilizando un parametro de ruta para la consulta.</p>
 		<h3>Ejemplo:</h3>
 		<pre>
 			GET /api/MuseoRijks/Obra/SK-C-5

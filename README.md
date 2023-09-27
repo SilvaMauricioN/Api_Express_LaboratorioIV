@@ -28,8 +28,7 @@ Respuesta:
     {
         "key": "Reinier Vinkeles (I)",
         "value": 4559
-    },
-    ...
+    }    
 ]       
 
 ##GET /api/MuseoRijks/Obras/Artista
@@ -58,8 +57,7 @@ Respuesta:
         "width": 5656,
         "height": 4704,
         "url": "https://lh3.googleusercontent.com/SsEIJWka3_cYRXXSE8VD3XNOgtOxoZhqW1uB6UFj78eg8gq3G4jAqL4Z_5KwA12aD7Leqp27F653aBkYkRBkEQyeKxfaZPyDx0O8CzWg=s0"
-        },
-        ...
+        }        
     }
 ]
 

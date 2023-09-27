@@ -8,7 +8,7 @@ class Server{
         this.routers();
     }
     middleware(){
-        this.app.use(express.static('public'));
+        this.app.use(express.static('Public'));
     }
     routers(){
         this.app.use('/api/MuseoRijks/',require('../Routes/Artista'));

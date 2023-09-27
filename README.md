@@ -30,12 +30,13 @@ Respuesta:
         "value": 4559
     }    
 ]       
-
+```
 ##GET /api/MuseoRijks/Obras/Artista
 
 Recupera Todas las obras de un Artista en particular. Utilizando el parametro de consulta nombreArtista.
 Ejemplo: GET /api/MuseoRijks/Obras/Artista?nombreArtista=Rembrandt+van+Rijn
-Respuesta:		
+Respuesta:
+```json		
 [
     {
         "links": {
@@ -60,12 +61,14 @@ Respuesta:
         }        
     }
 ]
+```
 
 ##GET /api/MuseoRijks/Obra/:id
 
 Recupera una obra en particular a partir de su id. Utilizando un parametro de ruta para la consulta.
 Ejemplo: GET /api/MuseoRijks/Obra/SK-C-5
 Respuesta:
+```json
 {
     "id": "nl-SK-C-5",
     "objectNumber": "SK-C-5",
@@ -134,5 +137,6 @@ Respuesta:
     ],
     "physicalMedium": "olieverf op doek"
 }
+```
 
 

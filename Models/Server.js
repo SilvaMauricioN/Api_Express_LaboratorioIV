@@ -11,6 +11,7 @@ class Server{
         this.app.use(express.static('Public'));
     }
     routers(){
+        this.app.use('/api/MuseoRijks/',require('../Routes/Coleccion'));
         this.app.use('/api/MuseoRijks/',require('../Routes/Artista'));
         this.app.use('/api/MuseoRijks/',require('../Routes/Obras'));
         this.app.all('*', (req,res)=>{

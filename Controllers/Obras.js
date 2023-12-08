@@ -26,10 +26,14 @@ const getObras = (req, res) => {
         });
 }
 const getObraPorId = (req, res) => {
-    const { id } =req.params;
+    const { id } =req.params; 
     axios.get(`https://www.rijksmuseum.nl/api/en/collection/${id}?key=${apiKey}`)
-        .then(({ data }) => {
+        .then(({ data }) => {            
             const { artObject } = data;
+
+            if (!artObject.webImage) {
+                artObject.webImage = { url: '' };
+            }            
             const {id,objectNumber,title,longTitle,copyrightHolder,
                 webImage: { url },titles,description, objectTypes,
                 objectCollection,principalMaker,materials,
@@ -53,14 +57,13 @@ const getObraPorId = (req, res) => {
                     msg:statusText,
                     detalle:data
                 });
-            } else{
+            } else{                               
                 res.status(500).json({
                     status:500,
                     msg: 'Error inesperado'
                 });
             }
         });
-
 }
 module.exports = {
     getObras,
